@@ -13,6 +13,8 @@ import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfInt;
+import org.opencv.core.Point;
+import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 import android.Manifest;
 import android.app.Activity;
@@ -116,9 +118,9 @@ public class MainActivity extends Activity {
         Core.reduce(imgDilation,hist,1,Core.REDUCE_AVG);
         hist.reshape(-1);
 
-        MatOfInt histMI = new MatOfInt(CvType.CV_8U);
-        hist.convertTo(histMI, CvType.CV_8U);
-        int[] histArray = new int[(int)(histMI.total())];
+        MatOfInt histMI = new MatOfInt(CvType.CV_32S);
+        hist.convertTo(histMI, CvType.CV_32S);
+        int[] histArray = new int[(int)(histMI.total()* histMI.channels())];
         histMI.get(0,0,histArray);
 
         int histRows = hist.rows();
@@ -126,6 +128,9 @@ public class MainActivity extends Activity {
 
         List<Integer> upper = new ArrayList<Integer>();
         List<Integer> lower = new ArrayList<Integer>();
+
+        Mat imgLineSeg = new Mat();
+        Imgproc.cvtColor(thresh,imgLineSeg,Imgproc.COLOR_GRAY2BGR);
 
         for(int iter=0; iter<histRows-1; iter++){
             if(histArray[iter]<=2 && histArray[iter+1]>2){
@@ -137,14 +142,12 @@ public class MainActivity extends Activity {
 
         }
 
-        for(int uLine=0; uLine < upper.size(); uLine++){
-            
-        }
+        System.out.println(upper);
+        System.out.println(lower);
+
 
         Utils.matToBitmap(imgDilation, grayBitmap);
         imgView.setImageBitmap(grayBitmap);
     }
-
-
-
+    
 }
