@@ -1,7 +1,8 @@
 package com.example.imageproc2;
 
-import androidx.appcompat.app.AppCompatActivity;
+// import all necessary packages for functioning of the app
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 import org.opencv.android.BaseLoaderCallback;
@@ -26,16 +27,15 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
 import android.graphics.Bitmap;
-
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MainActivity extends Activity {
+    // Declaring global variables
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
     Uri selectedImage;
-    Bitmap grayBitmap, selectedImageBitmap;
+    Bitmap grayBitmap, selectedImageBitmap, imgDilationBitmap;
     ImageView imgView;
 
     @Override
@@ -77,22 +77,27 @@ public class MainActivity extends Activity {
                 cursor.close();
                 imgView = findViewById(R.id.imgView);
                 // Set the Image in ImageView after decoding the String
-                imgView.setImageBitmap(BitmapFactory
-                        .decodeFile(imgDecodableString));
+                //imgView.setImageBitmap(BitmapFactory.decodeFile(imgDecodableString));
+                // Set the Image in ImageView after getting the URI of the image
                 imgView.setImageURI(selectedImage);
-
-            } else {
+            } 
+            else {
+                // Display message that the user hasn't picked any image
                 Toast.makeText(this, "You haven't picked Image",
                         Toast.LENGTH_LONG).show();
             }
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
+            // incase something went wrong
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG)
                     .show();
         }
-
     }
-
+    
+    // Image Processing and line segmentation
     public void RGB2Gray(View v){
+        
+        // local variables (Matrices)
         Mat argb = new Mat();
         Mat gray = new Mat();
         Mat thresh = new Mat();
@@ -104,17 +109,18 @@ public class MainActivity extends Activity {
         BitmapFactory.Options o = new BitmapFactory.Options();
         o.inDither=false;
         o.inSampleSize = 4;
+        // To get the y coordinates of starting and ending of lines
+        // height and width of selected image
         int width = selectedImageBitmap.getWidth();
         int height = selectedImageBitmap.getHeight();
+
         grayBitmap = Bitmap.createBitmap(width,height, Bitmap.Config.RGB_565);
+        imgDilationBitmap = Bitmap.createBitmap(width,height, Bitmap.Config.RGB_565);
         // converting bitmap to mat
         Utils.bitmapToMat(selectedImageBitmap, argb);
         Imgproc.cvtColor(argb, gray, Imgproc.COLOR_RGB2GRAY);
-
         Imgproc.threshold(gray,thresh,150,255,Imgproc.THRESH_BINARY_INV);
-
         Imgproc.dilate(thresh,imgDilation,kernel);
-
         Core.reduce(imgDilation,hist,1,Core.REDUCE_AVG);
         hist.reshape(-1);
 
@@ -134,20 +140,36 @@ public class MainActivity extends Activity {
 
         for(int iter=0; iter<histRows-1; iter++){
             if(histArray[iter]<=2 && histArray[iter+1]>2){
-                upper.add(iter);
+                upper.add(iter-2);
             }
             if(histArray[iter]>2 && histArray[iter+1]<=2){
-                lower.add(iter);
+                lower.add(iter+2);
             }
-
         }
 
-        System.out.println(upper);
-        System.out.println(lower);
-
-
-        Utils.matToBitmap(imgDilation, grayBitmap);
-        imgView.setImageBitmap(grayBitmap);
+        /*System.out.println(upper);
+        System.out.println(lower);*/
+        Utils.matToBitmap(gray,grayBitmap);
+        Utils.matToBitmap(imgDilation, imgDilationBitmap);
+        
+        // Converting Gray matrix to 1D Array
+        MatOfInt grayMI = new MatOfInt(CvType.CV_32S);
+        gray.convertTo(grayMI, CvType.CV_32S);
+        int[] grayArr = new int[(int)(grayMI.total()*grayMI.channels())];
+        grayMI.get(0,0,grayArr);
+        
+        // Converting the gray-1D array to gray-2D array
+        
+        
+        // Converting gray 2D array to bitmap for each line
+        
+        
+        // Converting bitmap to Matrix
+        
+        int[] arrU = new int[upper.size()];
+        int[] arrL = new int[lower.size()];
+        
+        imgView.setImageBitmap(imgDilationBitmap);
     }
-    
+
 }
