@@ -16,5 +16,16 @@ Train a model using MxNet and perform OCR for receipts so that the total amount 
 * Train the model using MxNet and AWS Amazon DL AMI
 * Perform inference with receipts
 
+## **INPUT:**
+Receipts (e-receipts only)
 
+## **OUTPUT:**
+Printing the total amount
+
+## **CONSTRAINTS:**
+* The receipts should have perfect horizontal allignment.\
+* The model wouldn't give results if there are too many words placed closely in a line.
+
+## **FUTURE WORK:**
+* Train a model for line segmentation so that the application can support even physical bills.
 
