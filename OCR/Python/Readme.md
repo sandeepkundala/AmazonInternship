@@ -57,5 +57,6 @@ To run inference on local station or anywhere else, copy both .params and .json 
 `scp -i "AmazonDL.pem" ec2-user@ec2-<...>:/home/ec2-user/handwritten-text-recognition-for-apache-mxnet/<filename> ./Downloads`
 
 ### *Inference with bill receipts:*
-* 
+
+![](https://github.com/sandeepkundala/AmazonInternship/blob/master/OCR/Python/amazon_internship_fig_1.png)
 
