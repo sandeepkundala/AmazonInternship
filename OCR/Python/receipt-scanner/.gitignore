@@ -1,0 +1,11 @@
+/CNNModel/trainingImages/*
+/CNNModel/image_data
+/CNNModel/saved_model
+/CRNNModel/logs
+/ReceiptProcessor/TestOutputs
+env
+*.pyc
+ReceiptGenerator/results
+*.zip
+Test_sample.txt
+Train_sample.txt
