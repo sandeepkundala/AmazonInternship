@@ -56,3 +56,6 @@ The model would be saved in .params and .json format.
 To run inference on local station or anywhere else, copy both .params and .json files to local PC by running the following in the local terminal where .pem file is present.
 `scp -i "AmazonDL.pem" ec2-user@ec2-<...>:/home/ec2-user/handwritten-text-recognition-for-apache-mxnet/<filename> ./Downloads`
 
+### *Inference with bill receipts:*
+* 
+
