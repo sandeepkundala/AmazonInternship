@@ -32,14 +32,14 @@ Printing the total amount
 ## **PROCESS:**
 
 ### *Data Generation:*
-The dataset was generated using modified version of receipt-scanner by [Yang Zhuohan](https://github.com/billstark) which is available at https://github.com/sandeepkundala/receipt-scanner (modified version). This particular GitHub repo helps to generate random texts including date.
+The dataset was generated using modified version of receipt-scanner by [Yang Zhuohan](https://github.com/billstark) which is available at https://github.com/sandeepkundala/AmazonInternship/tree/master/OCR/Python/receipt-scanner (modified version). This particular GitHub repo helps to generate random texts including date.
 
 To setup: `git clone https://github.com/sandeepkundala/receipt-scanner.git --recursive`
 
 To generate data: `python3 draw_receipt.py 100` -> this generates 100 images of each category. The images are saved at result_test4 directory. Compress and zip the folder to generate result_test4.zip
 
 ### *Model Training:*
-For model training, I have used [this](https://github.com/awslabs/handwritten-text-recognition-for-apache-mxnet.git) repository available [here](https://github.com/sandeepkundala/Text-recognition-for-apache-mxnet/blob/master/3b_text_recon.ipynb) to train model for my use case which is expense report application. I have trained the model using custom dataset in AWS Amazon DL AMI P2-16 instance with close to 12000 images. Around 3000 images were used for testing.
+For model training, I have used [this](https://github.com/awslabs/handwritten-text-recognition-for-apache-mxnet.git) repository available [here](https://github.com/sandeepkundala/AmazonInternship/tree/master/OCR/Python/Text-recognition-for-apache-mxnet/blob/master/3b_text_recon.ipynb) to train model for my use case which is expense report application. I have trained the model using custom dataset in AWS Amazon DL AMI P2-16 instance with close to 12000 images. Around 3000 images were used for testing.
 
 In the AWS Instance, git clone [this](https://github.com/sandeepkundala/Text-recognition-for-apache-mxnet.git) repository.
 
