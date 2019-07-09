@@ -2,10 +2,9 @@
 
 ## **SKILLS GAINED:**
 
-* Dataset generation
-* Training model in AWS Environment using MxNet
-* Performing inference
+* Machine Learning - Dataset generation, Training model in AWS Environment using MxNet, inference
 * Image Processing
+* Git
 
 ## **PROBLEM STATEMENT:**
 
