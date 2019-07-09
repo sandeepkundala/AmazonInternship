@@ -22,7 +22,7 @@ Receipts (e-receipts only)
 Printing the total amount
 
 ## **CONSTRAINTS:**
-* The receipts should have perfect horizontal allignment.\
+* The receipts should have perfect horizontal allignment.
 * The model wouldn't give results if there are too many words placed closely in a line.
 
 ## **FUTURE WORK:**
@@ -59,3 +59,7 @@ To run inference on local station or anywhere else, copy both .params and .json 
 
 ![](https://github.com/sandeepkundala/AmazonInternship/blob/master/OCR/Python/amazon_internship_fig_1.png)
 
+# ACKNOWLEDGEMENT
+
+I would like to thank my mentor Rakesh Vasudevan and my manager Denis Davydenko for constant support and guidance. I would also like to thank Thomas Delteil for guiding me in training the model and giving critical inputs.
+Lastly, I would like to thank Amazon for providing me opportunity to gain experience in the field of Machine Learning.
