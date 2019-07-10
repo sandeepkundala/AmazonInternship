@@ -31,7 +31,7 @@ Printing the total amount
 ## **PROCESS:**
 
 ### *Data Generation:*
-The dataset was generated using modified version of receipt-scanner by [Yang Zhuohan](https://github.com/billstark) which is available at https://github.com/sandeepkundala/AmazonInternship/tree/master/OCR/Python/receipt-scanner (modified version). This particular GitHub repo helps to generate random texts including date.
+The dataset was generated using modified version of receipt-scanner by [Yang Zhuohan](https://github.com/billstark) which is available [here](https://github.com/sandeepkundala/AmazonInternship/tree/master/OCR/Python/receipt-scanner) (modified version). This particular GitHub repo helps to generate random texts including date.
 
 To setup: `git clone https://github.com/sandeepkundala/receipt-scanner.git --recursive`
 
