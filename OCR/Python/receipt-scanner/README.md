@@ -14,6 +14,5 @@ A machine learning implementation of OCR
 > In repository root directory:  
 > `pip install -r requirements.txt`
 
-> ### Usage:
-> In repository root directory:  
-> `python crnn_processor.py --image [IMAGE_PATH]`
+> ### Note:
+> The image files are not shared since they take up lot of space. To generate images, run draw_receipts.py program with number X which would produce X images for each category  = ['line', 'date' , 'word', 'word_column', 'word_bracket', 'tax', 'priceL','priceR','totL','totR','price_left','price_right','percentage','float','int']
