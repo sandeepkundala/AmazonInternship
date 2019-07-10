@@ -4,7 +4,6 @@
 
 * Machine Learning - Dataset generation, Training model in AWS Environment using MxNet, inference
 * Image Processing - Line segmentation
-* Git
 
 ## **PROBLEM STATEMENT:**
 
