@@ -3,7 +3,7 @@
 ## **SKILLS GAINED:**
 
 * Machine Learning - Dataset generation, Training model in AWS Environment using MxNet, inference
-* Image Processing
+* Image Processing - Line segmentation
 * Git
 
 ## **PROBLEM STATEMENT:**
@@ -39,6 +39,8 @@ To generate data: `python3 draw_receipt.py 100` -> this generates 100 images of 
 
 ### *Model Training:*
 For model training, I have used [this](https://github.com/awslabs/handwritten-text-recognition-for-apache-mxnet.git) repository where the modified code is available [here](https://github.com/sandeepkundala/AmazonInternship/tree/master/OCR/Python/Text-recognition-for-apache-mxnet/blob/master/3b_text_recon.ipynb) to train model for the use case - expense report application. The model is trained using custom dataset in AWS Amazon DL AMI P2-16 instance with close to 12000 images. Around 3000 images were used for testing.
+
+The python code is available [here] (https://github.com/sandeepkundala/AmazonInternship/tree/master/OCR/Python/Text-recognition-for-apache-mxnet/blob/master/model_training.py).
 
 In the AWS Instance, git clone [this](https://github.com/sandeepkundala/AmazonInternship/tree/master/OCR/Python/Text-recognition-for-apache-mxnet.git) repository.
 
