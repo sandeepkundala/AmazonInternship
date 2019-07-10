@@ -375,10 +375,10 @@ def create_crnn_sample(typ):
 
 def create_noised_crnn_sample(count_each):
     types = ['line', 'date' , 'word', 'word_column', 'word_bracket', 'tax', 'priceL','priceR','totL','totR','price_left','price_right','percentage','float','int']
-    root_directory = 'results_test/'
+    root_directory = 'results_test4/'
     for typ in types:
         for i in range(count_each):
-            directory = 'results_test/{}_{}/'.format(typ, i)
+            directory = 'results_test4/{}_{}/'.format(typ, i)
             if not os.path.exists(directory):
                 os.makedirs(directory)
             text = crnn_line_text(typ)
