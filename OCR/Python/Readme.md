@@ -32,8 +32,6 @@ Printing the total amount
 ### *Data Generation:*
 The dataset was generated using modified version of receipt-scanner by [Yang Zhuohan](https://github.com/billstark) which is available [here](https://github.com/sandeepkundala/AmazonInternship/tree/master/OCR/Python/receipt-scanner) (modified version). This particular GitHub repo helps to generate random texts including date.
 
-To setup: `git clone https://github.com/sandeepkundala/receipt-scanner.git --recursive`
-
 To generate data: `python3 draw_receipt.py 100` -> this generates 100 images of each category. The images are saved at result_test4 directory. Compress and zip the folder to generate result_test4.zip
 
 ### *Model Training:*
@@ -41,7 +39,7 @@ For model training, I have used [this](https://github.com/awslabs/handwritten-te
 
 The python code is available [here](https://github.com/sandeepkundala/AmazonInternship/blob/master/OCR/Python/Text-recognition-for-apache-mxnet/model_training.py).
 
-In the AWS Instance, git clone [this](https://github.com/sandeepkundala/AmazonInternship/tree/master/OCR/Python/Text-recognition-for-apache-mxnet.git) repository.
+Fork [this](https://github.com/sandeepkundala/AmazonInternship/tree/master/OCR/Python/Text-recognition-for-apache-mxnet) repository and clone it in the AWS instance.
 
 To move the file from your local computer to AWS EC2 instance use `scp -i "key.pem" receipt-scanner/ReceiptGenerator/results_test4.zip ec2-user@<...>:/home/ec2-user/handwritten-text-recognition-for-apache-mxnet`
 
