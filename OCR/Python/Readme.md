@@ -59,7 +59,7 @@ To run inference on local station or anywhere else, copy both .params and .json 
 ![](https://github.com/sandeepkundala/AmazonInternship/blob/master/OCR/Python/amazon_internship_fig_1.png)
 
 
-![](https://docs.google.com/drawings/d/175fvcniunjMqEF4elgQ_M5c2rKSDKhQuY7WLLur3V4s/edit?usp=sharing)
+![](https://github.com/sandeepkundala/AmazonInternship/blob/master/OCR/Python/ModelArch.jpg)
 
 
 # ACKNOWLEDGEMENT
