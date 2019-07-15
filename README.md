@@ -1,0 +1,3 @@
+# AmazonInternship
+
+Navigate to OCR
