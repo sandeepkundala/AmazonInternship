@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#146EB4">
+
+    <TextView
+        android:id="@+id/StoreNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Store:"
+        android:textSize="32sp"
+        android:paddingLeft="40sp"
+        android:paddingRight="10sp"
+        android:paddingTop="70sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:singleLine="true"
+        android:id="@+id/StoreNameET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Store Name"
+        android:textSize="30sp"
+        android:paddingTop="70sp"
+        android:textColor="#FFFFFF"
+        android:layout_toRightOf="@id/StoreNameTV"/>
+
+    <TextView
+        android:id="@+id/totalTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Total:"
+        android:textSize="32sp"
+        android:paddingLeft="40sp"
+        android:paddingRight="10sp"
+        android:paddingTop="30sp"
+        android:layout_below="@id/StoreNameTV"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:singleLine="true"
+        android:id="@+id/totalET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Total"
+        android:textSize="30sp"
+        android:inputType="numberDecimal"
+        android:layout_toRightOf="@id/totalTV"
+        android:paddingTop="20sp"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/StoreNameET"/>
+
+    <TextView
+        android:id="@+id/dopTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Date of Purchase:"
+        android:textSize="32sp"
+        android:paddingLeft="40sp"
+        android:paddingRight="10sp"
+        android:paddingTop="30sp"
+        android:layout_below="@id/totalTV"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:singleLine="true"
+        android:id="@+id/dopET"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dopTV"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="40sp"
+        android:inputType="date"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:hint="MM/DD/YYYY"/>
+
+    <TextView
+        android:id="@+id/doeTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Date of Entry:"
+        android:textSize="32sp"
+        android:paddingTop="30sp"
+        android:paddingLeft="40sp"
+        android:layout_below="@id/dopET"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:singleLine="true"
+        android:id="@+id/doeET"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="40sp"
+        android:inputType="date"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/doeTV"
+        />
+
+
+    <Button
+        android:id="@+id/buttonFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/doeET"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:background="#FEBD77"
+        android:layout_weight="0"
+        android:onClick="finish"
+        android:text="Finish" />
+
+
+
+</RelativeLayout>

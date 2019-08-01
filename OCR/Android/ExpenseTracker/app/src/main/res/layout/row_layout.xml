@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content"
+    android:background="#146EB4">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@color/cardview_light_background">
+        <!--
+        items for a single row of RecyclerView
+        -->
+        <TextView
+            android:id="@+id/Store"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Store:                "
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/StoreRV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Store"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/Store"/>
+
+        <TextView
+            android:id="@+id/Total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total:                         "
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_below="@id/Store" />
+
+        <TextView
+            android:id="@+id/TotalRV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_below="@id/StoreRV"
+            android:layout_toRightOf="@id/Total"/>
+
+        <TextView
+            android:id="@+id/DoP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date of Purchase:   "
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_below="@id/Total"
+            />
+
+        <TextView
+            android:id="@+id/DoPRV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DoP"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_below="@id/TotalRV"
+            android:layout_toRightOf="@id/DoP"
+            />
+
+        <TextView
+            android:id="@+id/DoE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date of Entry:           "
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_below="@id/DoP"/>
+
+        <TextView
+            android:id="@+id/DoERV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DoE"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_below="@id/DoPRV"
+            android:layout_toRightOf="@id/DoE"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

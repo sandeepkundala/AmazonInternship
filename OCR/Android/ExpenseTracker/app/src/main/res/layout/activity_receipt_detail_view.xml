@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#146EB4">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/imgViewE"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgViewE"
+            android:background="#FEBD77"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp">
+        <TextView
+            android:id="@+id/Store"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Store:                "
+            android:paddingLeft="5dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:paddingTop="5dp"
+            />
+
+        <TextView
+            android:id="@+id/StoreE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Store"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:paddingTop="5dp"
+            android:layout_toRightOf="@id/Store" />
+
+        <TextView
+            android:id="@+id/Total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total:                         "
+            android:paddingLeft="5dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_below="@id/Store" />
+
+        <TextView
+            android:id="@+id/TotalE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_below="@id/StoreE"
+            android:layout_toRightOf="@id/Total"/>
+
+        <TextView
+            android:id="@+id/DoP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date of Purchase:   "
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:paddingLeft="5dp"
+            android:layout_below="@id/Total" />
+
+        <TextView
+            android:id="@+id/DoPE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DoP"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_below="@id/TotalE"
+            android:layout_toRightOf="@id/DoP" />
+
+        <TextView
+            android:id="@+id/DoE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date of Entry:           "
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_below="@id/DoP"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/DoEE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DoE"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_below="@id/DoPE"
+            android:layout_toRightOf="@id/DoE"
+            android:paddingBottom="5dp"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
