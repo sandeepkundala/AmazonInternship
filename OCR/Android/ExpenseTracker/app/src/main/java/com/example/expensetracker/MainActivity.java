@@ -2,11 +2,8 @@ package com.example.expensetracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Toast;
 import java.io.File;
@@ -14,9 +11,7 @@ import java.io.File;
 public class MainActivity extends AppCompatActivity {
     // Global variables
     private static int RESULT_LOAD_IMG = 1;
-    String imgDecodableString;
     Uri selectedImage;
-    Bitmap selectedImageBitmap;
     int backButtonCount = 0;
 
     // Set the layout: activity_main.xml
@@ -41,19 +36,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             // When an Image is picked
             if (requestCode == RESULT_LOAD_IMG && resultCode == RESULT_OK && null != data) {
-                // Get the Image from data
+                // Get the path of the image
                 selectedImage = data.getData();
-                String[] filePathColumn = { MediaStore.Images.Media.DATA };
-                selectedImageBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(),selectedImage);
-
-                // Get the cursor
-                Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-
-                // Move to first row
-                cursor.moveToFirst();
-                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                imgDecodableString = cursor.getString(columnIndex);
-                cursor.close();
 
                 // Move to new intent with image URI
                 Intent showSelImgint = new Intent(MainActivity.this, com.example.expensetracker.showImgActivity.class) ;
@@ -72,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // when View Receipts button is clicked
     public void ViewReceipts(View view) {
         Intent viewReceiptsIntent = new Intent(MainActivity.this,viewReceiptsActivity.class);
         startActivity(viewReceiptsIntent);
@@ -84,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // when back button is pressed - user has to click back twice to exit the app: enhances user experience
     public void onBackPressed(){
         if(backButtonCount >= 1)
         {

@@ -1,7 +1,6 @@
 package com.example.expensetracker;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -15,7 +14,7 @@ import java.util.Date;
 
 
 public class showImgActivity extends AppCompatActivity {
-    private static int RESULT_LOAD_IMG = 1;
+    //private static int RESULT_LOAD_IMG = 1;
     ImageView selImgView;
     Bitmap selectedImageBitmap;
 
@@ -23,6 +22,8 @@ public class showImgActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_img);
+        // get the image URL from previous intent, resolve and display the image in image view
+        // converted image url to bitmap for the model
         Uri realImage = getIntent().getData();
         selImgView = findViewById(R.id.imgViewSel);
         try{
@@ -31,9 +32,11 @@ public class showImgActivity extends AppCompatActivity {
         } catch (Exception e){e.printStackTrace();}
     }
 
+    // When "proceed" is clicked
     public void proceed(View v){
 
-        // save the image and path- create a file and write data into it
+        // save the image and path - create a file and write data into it
+        // the images are saved with date format and are compressed before saving
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
         String newImageFile = sdf.format(new Date())+".jpg";
         try{
@@ -47,6 +50,7 @@ public class showImgActivity extends AppCompatActivity {
         String tot = "11.1";
         String dateOfPurchase = "13/32/18";
 
+        // Check if decoded Date of Purchase is correct for this century
         try{
             dateOfPurchase=dateOfPurchase.replace("-","/");
             String[] dateP = dateOfPurchase.split("/");
@@ -71,16 +75,15 @@ public class showImgActivity extends AppCompatActivity {
         }
         catch (Exception e){e.printStackTrace();}
 
+        // Pass the data to the next intent (user editable form
         Intent procSelImgint = new Intent(showImgActivity.this, com.example.expensetracker.procSelImg.class);
         procSelImgint.putExtra("imgFile",newImageFile);
         procSelImgint.putExtra("storeName",name);
         procSelImgint.putExtra("tot",tot);
         procSelImgint.putExtra("date",dateOfPurchase);
         startActivity(procSelImgint);
-
-
     }
-
+    // go to main activity
     public void cancel(View v){
         Intent goToMainActivity = new Intent(showImgActivity.this, MainActivity.class);
         startActivity(goToMainActivity);
